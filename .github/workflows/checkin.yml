@@ -21,6 +21,6 @@ jobs:
  
     - name: Start App with Environment Variable
       env:
-        EMAIL: ${{secrets.EMAIL}}
+        EMAIL: ${{secrets.email}}
         PASSWD: ${{secrets.PASSWD}}
       run: npm start
