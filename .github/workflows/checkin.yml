@@ -7,20 +7,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
- 
     steps:
     - uses: actions/checkout@v3
- 
-    - name: Use Node.js 16
-      uses: actions/setup-node@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: 16
- 
-    - name: npm install
-      run: npm install
- 
-    - name: Start App with Environment Variable
-      env:
+    - run: npm install
+    - env:
         EMAIL: ${{secrets.email}}
         PASSWD: ${{secrets.PASSWD}}
       run: npm start
