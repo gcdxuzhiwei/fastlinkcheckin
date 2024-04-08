@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: 16
  
-    - name: Install Dependencies
+    - name: npm install
       run: npm install
  
     - name: Start App with Environment Variable
