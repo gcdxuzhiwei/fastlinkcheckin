@@ -2,19 +2,25 @@ name: checkin
 
 on:
   push:
-    branches:
-      - main
-
+    branches: [ main ]
+ 
 jobs:
   build:
     runs-on: ubuntu-latest
+ 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm i
-      - run: npm start
-        env:
-          EMAIL: ${{secrets.EMAIL}}
-          PASSWD: ${{secrets.PASSWD}}
+    - uses: actions/checkout@v3
+ 
+    - name: Use Node.js 16
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+ 
+    - name: Install Dependencies
+      run: npm install
+ 
+    - name: Start App with Environment Variable
+      env:
+        EMAIL: ${{secrets.EMAIL}}
+        PASSWD: ${{secrets.PASSWD}}
+      run: npm start
