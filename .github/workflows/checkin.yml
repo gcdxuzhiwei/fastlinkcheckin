@@ -15,3 +15,6 @@ jobs:
           node-version: 16
       - run: npm i
       - run: npm start
+        env:
+          EMAIL: ${{secrets.EMAIL}}
+          PASSWD: ${{secrets.PASSWD}}
