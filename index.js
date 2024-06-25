@@ -11,7 +11,6 @@ axios
     const cookie = res.headers["set-cookie"]
       .map((v) => v.split("; ")[0])
       .join("; ");
-
     axios
       .post("https://fl9web01.fastlinkyj.com/user/checkin", undefined, {
         headers: {
